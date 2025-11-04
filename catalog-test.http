@@ -1,0 +1,49 @@
+### Get all items
+GET http://localhost:5154/catalog
+Accept: application/json
+
+### Get single item
+GET http://localhost:5154/catalog/1
+Accept: application/json
+
+### POST a new item to the Catalog Collection
+
+POST http://localhost:5154/catalog
+Content-Type: application/json
+
+{
+    "name": "Shoes",
+    "description": "Ohio State shoes",
+    "brand": "Nike",
+    "price": 129.99
+}
+
+### Test POST for reviews
+
+POST http://localhost:5154/catalog/1/ratings
+Content-Type: application/json
+
+{
+    "stars": 5,
+    "userName": "Ohio",
+    "review": "Awesome clothes!"
+}
+
+
+### Test PUT update for catalog items
+
+PUT http://localhost:5154/catalog/1 
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Shirt",
+    "description": "Updated Ohio State shirt with new logo.",
+    "brand": "Nike",
+    "price": 39.99,
+    "ratings": []
+}
+
+### Test DELETE update for catalog items
+
+DELETE http://localhost:5154/catalog/1

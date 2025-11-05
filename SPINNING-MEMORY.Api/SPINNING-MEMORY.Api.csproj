@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SPINNING-MEMORY.Domain\SPINNING-MEMORY.Domain.csproj" />
+    <ProjectReference Include="..\SPINNING-MEMORY.Data\SPINNING-MEMORY.Data.csproj" />
   </ItemGroup>
 
 </Project>

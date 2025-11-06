@@ -1,4 +1,4 @@
-﻿using SPINNING_MEMORY.Domain.Catalog;
+﻿using SPINNING.MEMORY.Domain.Catalog;
 using Microsoft.EntityFrameworkCore;
 
 namespace SPINNING_MEMORY.Data

@@ -1,7 +1,7 @@
-﻿using SPINNING.MEMORY.Domain.Catalog;
+﻿using SPINNING_MEMORY.Domain.Catalog;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using SPINNING.MEMORY.Data;
+using SPINNING_MEMORY.Domain.Orders;
+using SPINNING_MEMORY.Data;
 
 namespace SPINNING_MEMORY.Data
 {
@@ -12,6 +12,8 @@ namespace SPINNING_MEMORY.Data
         { }
 
         public DbSet<Item> Items { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

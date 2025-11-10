@@ -1,7 +1,8 @@
-using SPINNING.MEMORY.Domain.Catalog;
+using SPINNING_MEMORY.Domain.Catalog;
+using SPINNING_MEMORY.Domain.Orders;
 using Microsoft.EntityFrameworkCore;
 
-namespace SPINNING.MEMORY.Data
+namespace SPINNING_MEMORY.Data
 {
     public static class DbInitializer
     {

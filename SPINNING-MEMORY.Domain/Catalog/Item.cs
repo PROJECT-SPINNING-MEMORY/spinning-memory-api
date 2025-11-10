@@ -1,6 +1,6 @@
 using System;
 
-namespace SPINNING.MEMORY.Domain.Catalog
+namespace SPINNING_MEMORY.Domain.Catalog
 {
 
     public class Rating

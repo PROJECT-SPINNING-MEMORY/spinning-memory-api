@@ -1,5 +1,7 @@
+using System.Reflection.Metadata;
 using Microsoft.AspNetCore.Mvc;
-using SPINNING.MEMORY.Domain.Catalog;
+using Microsoft.EntityFrameworkCore;
+using SPINNING_MEMORY.Domain.Catalog;
 using SPINNING_MEMORY.Data;
 
 namespace SPINNING.MEMORY.Api.Controllers
@@ -51,15 +53,34 @@ namespace SPINNING.MEMORY.Api.Controllers
             return Ok(item);
         }
         [HttpPut("{id:int}")]
-        public IActionResult Put(int id, Item item)
+        public IActionResult PutItem(int id, [FromBody] Item item)
         {
+            if (id != item.Id)
+            {
+                return BadRequest();
+            }
+            if (_db.Items.Find(id) == null)
+            {
+                return NotFound();
+            }
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
+
             return NoContent();
         }
         
         [HttpDelete("{id:int}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteItem(int id)
         {
-            return NoContent();
+            var item = _db.Items.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            _db.Items.Remove(item);
+            _db.SaveChanges();
+
+            return Ok();
         }
 
     }

@@ -8,7 +8,8 @@ namespace SPINNING_MEMORY.Data
         public StoreContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<StoreContext>();
-            optionsBuilder.UseSqlite("Data Source=store.db");
+
+            optionsBuilder.UseSqlite("Data Source=/Users/chloeporter/spinning-memory-api-4/Registrar.sqlite");
 
             return new StoreContext(optionsBuilder.Options);
         }

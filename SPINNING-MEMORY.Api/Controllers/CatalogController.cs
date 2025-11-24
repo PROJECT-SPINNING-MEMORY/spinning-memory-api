@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SPINNING_MEMORY.Domain.Catalog;
 using SPINNING_MEMORY.Data;
+using Microsoft.AspNetCore.Authorization;
 
-namespace SPINNING.MEMORY.Api.Controllers
+
+namespace SPINNING_MEMORY.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -70,6 +72,8 @@ namespace SPINNING.MEMORY.Api.Controllers
         }
         
         [HttpDelete("{id:int}")]
+        [Authorize("delete:catalog")]
+        
         public IActionResult DeleteItem(int id)
         {
             var item = _db.Items.Find(id);

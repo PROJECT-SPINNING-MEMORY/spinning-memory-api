@@ -1,0 +1,15 @@
+###
+curl --request POST \
+  --url https://dev-e12tjaub83tvhyg8.us.auth0.com/oauth/token \
+  --header 'content-type: application/json' \
+  --data '{
+    "client_id":"TCEucSMZZRgIP990yXeLIwDJH1Et558h",
+    "client_secret":"SJyA_yX9jwV0XLMiS34aY-GOYN5ZDaQ7MluX1mbER-3DbyF0tjTyUHmj5g9t6d3S",
+    "audience":"https://spinning-memory",
+    "grant_type":"client_credentials"
+  }'
+
+###
+  curl --request DELETE \
+    --url http://localhost:5154/catalog/1
+    --header 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1qQmtqNWxUZ1lKVmxVUXltQXU1RSJ9.eyJpc3MiOiJodHRwczovL2Rldi1lMTJ0amF1YjgzdHZoeWc4LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJUQ0V1Y1NNWlpSZ0lQOTkweVhlTEl3REpIMUV0NTU4aEBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9zcGlubmluZy1tZW1vcnkiLCJpYXQiOjE3NjM5MzU4OTAsImV4cCI6MTc2NDAyMjI5MCwic2NvcGUiOiJkZWxldGU6Y2F0YWxvZyIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsImF6cCI6IlRDRXVjU01aWlJnSVA5OTB5WGVMSXdESkgxRXQ1NThoIn0.KuwvBZGiwdlVF3Jix2dDA1eQYofsUdkorzhKD9xYT4Xw_2OnXUrpSi44Otvt69z802ojPhXENDTyTIaDb6Ax3u_5upABysJvOGj7FS1EgQsoGAYmiqIMi9U7PLdHzblr11UKBlAhD1KT8My7g0GT96UnjoG45GuDSI1p43WNdULrrliM0Sj-htrWf704NUfEId8uI5WOAWjzRPudtgp8bZ06igWGwLNocp-fTBFa8ZK_4HBvFjPL1GHjGTLNGGlBI_rI3MF5XZIVioNZvIz9AyrEvj_5rkOJTdp7ghhlrj-IUKR4THn8L8G8UBNboVDCCcKp7lnRl2smsixSKp8srg'

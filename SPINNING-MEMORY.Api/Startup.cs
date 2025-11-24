@@ -54,7 +54,7 @@ namespace SPINNING_MEMORY.Api
 
             // CORRECT DB CONTEXT
             services.AddDbContext<StoreContext>(options =>
-                options.UseSqlite("Data Source=/Users/chloeporter/spinning-memory-api-4/Registrar.sqlite",
+                options.UseSqlite("Data Source=../Registrar.sqlite",
                     b => b.MigrationsAssembly("SPINNING-MEMORY.Data")));
 
 

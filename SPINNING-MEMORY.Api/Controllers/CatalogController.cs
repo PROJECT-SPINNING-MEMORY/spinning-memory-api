@@ -21,7 +21,7 @@ namespace SPINNING_MEMORY.Api.Controllers
         [HttpGet]
         public IActionResult GetItems()
         {
-            return Ok(_db.Items);
+            return Ok(_db.Items.ToList());
         }
 
         [HttpGet("{id:int}")]
@@ -32,13 +32,13 @@ namespace SPINNING_MEMORY.Api.Controllers
             {
                 return NotFound();
             }
-            return Ok();
+            return Ok(item);
         }
         [HttpPost]
         public IActionResult Post(Item item){
             _db.Items.Add(item);
             _db.SaveChanges();
-            return Created($"/catalog{item.Id}", item);
+            return Created($"/catalog/{item.Id}", item);
         }
 
         [HttpPost("{id:int}/ratings")]
@@ -84,7 +84,7 @@ namespace SPINNING_MEMORY.Api.Controllers
             _db.Items.Remove(item);
             _db.SaveChanges();
 
-            return Ok();
+            return Ok(); 
         }
 
     }
